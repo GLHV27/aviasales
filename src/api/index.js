@@ -20,6 +20,11 @@ export default {
         return this.makeRequest(path, params, 'GET');
     },
 
+    getTickets(params) {
+        let path = '/tickets.json';
+        return this.makeRequest(path, params, 'GET');
+    },
+
     makeRequest(path, params = {}, method = 'POST') {
         isDevMode ? console.info(path, 'request started') : '';
 

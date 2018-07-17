@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 
 const pathToBuild = '/build';
@@ -15,8 +16,7 @@ function addHash(template, hash) {
 // Plugins
 let plugins = [
     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-        'process.env.apiPath': JSON.stringify('/api')
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -30,6 +30,9 @@ let plugins = [
         hash: false,
         alwaysWriteToDisk: true
     }),
+    new CopyWebpackPlugin([
+        './src/_api/tickets.json'
+    ]),
     new HtmlWebpackHarddiskPlugin()
 ];
 

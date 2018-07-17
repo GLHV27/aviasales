@@ -6,6 +6,7 @@ const { dispatch } = store;
 const SessionActions = {
     start() {
         SessionActions.getExchangeRates();
+        SessionActions.getTickets();
     },
 
     getExchangeRates() {
@@ -17,6 +18,24 @@ const SessionActions = {
             });
         });
     },
+
+    getTickets() {
+        dispatch({
+            type  : AppConstants.TICKETS_START_LOADING
+        });
+
+        return api.getTickets()
+        .then(data => {
+            dispatch({
+                type  : AppConstants.TICKETS_SUCCESS,
+                items : data.tickets || []
+            });
+        }).catch(err => {
+            dispatch({
+                type: AppConstants.TICKETS_FAIL
+            });
+        });
+    }
 };
 
 export default SessionActions;

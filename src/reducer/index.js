@@ -2,10 +2,12 @@ import { combineReducers } from 'redux';
 
 import { reducer as exchangeRatesReducer } from './exchangeRates';
 import { reducer as currentCurrencyReducer } from './currentCurrency';
+import { reducer as ticketsReducer } from './tickets';
 
 const reducer = combineReducers({
     exchangeRates: exchangeRatesReducer,
-    currentCurrency: currentCurrencyReducer
+    currentCurrency: currentCurrencyReducer,
+    tickets: ticketsReducer
 });
 
 export default reducer;
