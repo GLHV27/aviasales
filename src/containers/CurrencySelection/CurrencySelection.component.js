@@ -1,28 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import config from '../../config';
 
 class CurrencySelection extends React.Component {
     constructor(props) {
         super();
 
-        this.state = {};
+        this.actions = {};
+        this.actions.setCurrency = props.setCurrency;
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(event) {
+        let value = event.target.value;
+
+        this.actions.setCurrency(value);
     }
 
     render() {
         return (
             <div className="btn-group">
-                <label className="btn-group__item gui-active">
-                    <input className="btn-group__input" type="radio" name="currency" value="RUB" />
-                    <span className="btn-group__text">RUB</span>
-                </label>
-                <label className="btn-group__item">
-                    <input className="btn-group__input" type="radio" name="currency" value="USD" />
-                    <span className="btn-group__text">USD</span>
-                </label>
-                <label className="btn-group__item">
-                    <input className="btn-group__input" type="radio" name="currency" value="EUR" />
-                    <span className="btn-group__text">EUR</span>
-                </label>
+                {config.currencies.map(key => (
+                    <label className="btn-group__item gui-active" key={key}>
+                        <input
+                            className="btn-group__input"
+                            type="radio"
+                            name="currency"
+                            value={key}
+                            checked={key === this.props.current}
+                            onChange={this.onChange}
+                        />
+                        <span className="btn-group__text">{key}</span>
+                    </label>
+                ))}
             </div>
         )
     }

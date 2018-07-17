@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SessionActions from './actions/SessionActions';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Tickets from './containers/Tickets/Tickets.container';
@@ -7,6 +8,9 @@ import Tickets from './containers/Tickets/Tickets.container';
 import './statics/style/index.less';
 
 class App extends React.Component {
+    componentDidMount() {
+        SessionActions.start();
+    }
 
     render() {
         return (
