@@ -1,0 +1,56 @@
+.btn-group {
+    display: flex;
+
+    &__item {
+        width: 33.3333%;
+
+        & + & {
+            margin-left: -1px;
+        }
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+        height: 40px;
+        padding: 0 12px;
+        border: 1px solid #D2D5D6;
+        text-decoration: none;
+        font: 600 12px/40px @OpenSans;
+        color: #2196F3;
+        text-align: center;
+        transition: background 0.2s ease 0s, border 0.2s ease 0s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #F2FCFF;
+            border-color: #64B5F5;
+            z-index: 1;
+        }
+
+        .btn-group__item:first-child & {
+            border-top-left-radius: @btn-radius;
+            border-bottom-left-radius: @btn-radius;
+        }
+
+        .btn-group__item:last-child & {
+            border-top-right-radius: @btn-radius;
+            border-bottom-right-radius: @btn-radius;
+        }
+
+        .btn-group__input:checked ~ & {
+            background-color: #2196F3;
+            border-color: #2196F3;
+            color: #ffffff;
+            z-index: 2;
+            cursor: default;
+        }
+    }
+}

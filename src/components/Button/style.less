@@ -1,0 +1,25 @@
+@import "../../statics/style/variables.less";
+@import "../../statics/style/fonts.less";
+
+.gui-button {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #FF6D00;
+    border: none;
+    border-radius: @btn-radius;
+    text-decoration: none;
+    font: 400 16px/1.375 @OpenSans;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1), 0 1px 0 #D64D08;
+
+    &:hover {
+        background-color: #FF8124;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 0 #F7661D;
+    }
+
+    &_full {
+        width: 100%;
+    }
+}

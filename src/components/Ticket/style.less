@@ -1,0 +1,114 @@
+@import "../../statics/style/mixins.less";
+@import "../../statics/style/variables.less";
+
+.ticket {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(91, 137, 164, 0.25);
+    transition: box-shadow 0.2s ease 0s;
+
+    &:hover {
+        box-shadow: 0 5px 25px rgba(91, 137, 164, 0.1);
+    }
+
+    &__cell {
+        box-sizing: border-box;
+
+        &_sidebar {
+            width: 36%;
+            padding: 22px 20px 25px;
+            border-right: 1px solid #ECEFF1;
+            text-align: center;
+
+            @media @small-mobile {
+                width: 100%;
+                border-bottom: 1px solid #ECEFF1;
+                border-right: none;
+            }
+        }
+
+        &_container {
+            width: 64%;
+            padding: 15px 25px 20px;
+
+            @media @small-mobile {
+                width: 100%;
+            }
+        }
+    }
+
+    &-logo {
+
+        &__image {
+            max-width: 120px;
+            vertical-align: top;
+        }
+    }
+
+    &-buy {
+        margin-top: 15px;
+    }
+
+    &-route {
+
+        &__group {
+            display: flex;
+        }
+
+        &__item {
+            width: 50%;
+
+            &_point {
+                width: auto;
+            }
+
+            &_stops {
+                width: 100%;
+            }
+
+            &_destination {
+                text-align: right;
+            }
+        }
+
+        &__time {
+            font-size: 32px;
+
+            @media @small-mobile {
+                font-size: 26px;
+            }
+        }
+
+        &__date {
+            color: #8B9497;
+        }
+    }
+
+    &-stops {
+        padding: 10px 20px 0;
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #8B9497;
+        text-align: center;
+
+        &__text {}
+
+        &__line {
+            position: relative;
+            margin: 5px 0;
+            border-top: 1px solid #D2D5D6;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -7px;
+                right: 0;
+                width: 15px;
+                height: 13px;
+                background: #ffffff url('../../statics/images/plane.svg') no-repeat center right;
+            }
+        }
+    }
+}

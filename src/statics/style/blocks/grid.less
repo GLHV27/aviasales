@@ -1,0 +1,27 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    &__cell {
+        box-sizing: border-box;
+        padding: 0 10px;
+
+        &_sidebar {
+            width: 30%;
+
+            @media @mobile {
+                width: 100%;
+            }
+        }
+
+        &_container {
+            width: 70%;
+
+            @media @mobile {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    }
+}

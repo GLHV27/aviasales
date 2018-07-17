@@ -1,0 +1,32 @@
+.filter {
+    margin-top: -8px;
+    font-size: 13px;
+
+    &__item {
+        position: relative;
+        margin: 0 -15px;
+        padding: 8px 15px 7px;
+        transition: background 0.2s ease 0s;
+
+        &:hover {
+            background-color: #F1FCFF;
+        }
+    }
+
+    &__only {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -7px;
+        text-decoration: none;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #2196F3;
+        opacity: 0;
+        transition: opacity 0.2s ease 0s;
+
+        .filter__item:hover & {
+            opacity: 1;
+        }
+    }
+}
