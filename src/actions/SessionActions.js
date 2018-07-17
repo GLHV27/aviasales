@@ -30,6 +30,10 @@ const SessionActions = {
                 type  : AppConstants.TICKETS_SUCCESS,
                 items : data.tickets || []
             });
+
+            dispatch({
+                type  : AppConstants.FILTER_UPDATE_LIST_STOPS
+            });
         }).catch(err => {
             dispatch({
                 type: AppConstants.TICKETS_FAIL

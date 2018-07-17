@@ -12,12 +12,13 @@ class Tickets extends React.Component {
     render() {
         return (
             <ul className="tickets">
-                <li className="tickets__item">
-                    <Ticket />
-                </li>
-                <li className="tickets__item">
-                    <Ticket />
-                </li>
+                {this.props.list.map((item, i) => (
+                    <li className="tickets__item" key={i}>
+                        <Ticket
+                            {...item}
+                        />
+                    </li>
+                ))}
             </ul>
         )
     }

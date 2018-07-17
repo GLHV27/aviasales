@@ -6,6 +6,28 @@
     text-transform: uppercase;
 }
 
-.gui-rouble {
-    font-family: @CurrencyFont;
+.gui-currency {
+
+    &_rouble {
+
+        &:after {
+            content: 'R';
+            margin-left: 3px;
+            font-family: @CurrencyFont;
+        }
+    }
+
+    &_dollar {
+        &::before {
+            content: '$';
+            margin-right: 1px;
+        }
+    }
+
+    &_euro {
+        &::before {
+            content: '\20AC';
+            margin-right: 1px;
+        }
+    }
 }
