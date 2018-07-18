@@ -1,3 +1,4 @@
+import Intl from './Intl';
 import {
     getLocale
 } from './helpers';

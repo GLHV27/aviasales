@@ -44,6 +44,7 @@
     "html-webpack-include-assets-plugin": "1.0.3",
     "html-webpack-plugin": "2.28.0",
     "http-proxy-middleware": "0.17.2",
+    "intl": "1.2.5",
     "keymirror": "0.1.1",
     "less": "2.7.2",
     "less-loader": "2.2.3",

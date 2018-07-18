@@ -22,7 +22,7 @@ class CurrencySelection extends React.Component {
         return (
             <div className="btn-group">
                 {config.currencies.map(key => (
-                    <label className="btn-group__item gui-active" key={key}>
+                    <label className="btn-group__item" key={key}>
                         <input
                             className="btn-group__input"
                             type="radio"
